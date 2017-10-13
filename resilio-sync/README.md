@@ -19,7 +19,7 @@ docker run -d --name ResilioSync \
   -v $STATE_FOLDER:/root/.sync \
   -v $DATA_FOLDER:/mnt/rslsync \
   --restart on-failure \
-  dishuostec/docker-resilio-sync
+  dishuostec/resilio-sync
 ```
 
 Go to localhost:$WEBUI_PORT in a web browser to access the webui.
@@ -36,7 +36,7 @@ docker run -d --name ResilioSync \
   -v $STATE_FOLDER:/root/.sync \
   -v $DATA_FOLDER:/mnt/rslsync \
   --restart on-failure \
-  dishuostec/docker-resilio-sync
+  dishuostec/resilio-sync
 ```
 
 # Volume

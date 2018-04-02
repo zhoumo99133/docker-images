@@ -12,7 +12,7 @@ RUN ver=$(cat /etc/alpine-release | awk -F '.' '{printf "%s.%s", $1, $2;}') \
     && echo "${ALPINE_REPO}/alpine/v${ver}/main" > ${repos} \
     && echo "${ALPINE_REPO}/alpine/v${ver}/community" >> ${repos} \
     && apk add --no-cache --virtual .tz tzdata \
-    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo Asia/Shanghai > /etc/timezone \
     && apk del .tz \
     && apk add --no-cache \

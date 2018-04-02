@@ -8,7 +8,7 @@ ENV PHALCON_VERSION=3.3.2
 
 RUN ver=$(cat /etc/alpine-release | awk -F '.' '{printf "%s.%s", $1, $2;}') \
     && repos=/etc/apk/repositories \
-        && mv -f ${repos} ${repos}_bk \
+    && mv -f ${repos} ${repos}_bk \
     && echo "${ALPINE_REPO}/alpine/v${ver}/main" > ${repos} \
     && echo "${ALPINE_REPO}/alpine/v${ver}/community" >> ${repos} \
     && apk add --no-cache --virtual .tz tzdata \
@@ -19,9 +19,7 @@ RUN ver=$(cat /etc/alpine-release | awk -F '.' '{printf "%s.%s", $1, $2;}') \
         tzdata \
         freetype-dev \
         libjpeg-turbo-dev \
-        libmcrypt-dev \
         libpng-dev \
-        libmcrypt \
         gettext-dev \
         libintl \
         icu-dev \
@@ -30,7 +28,6 @@ RUN ver=$(cat /etc/alpine-release | awk -F '.' '{printf "%s.%s", $1, $2;}') \
     && docker-php-ext-install -j${nproc} \
         gettext \
         intl \
-        mcrypt \
         mysqli \
         pdo_mysql \
         xmlrpc \

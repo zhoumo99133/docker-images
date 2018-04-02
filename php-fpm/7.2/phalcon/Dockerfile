@@ -11,10 +11,9 @@ RUN ver=$(cat /etc/alpine-release | awk -F '.' '{printf "%s.%s", $1, $2;}') \
     && mv -f ${repos} ${repos}_bk \
     && echo "${ALPINE_REPO}/alpine/v${ver}/main" > ${repos} \
     && echo "${ALPINE_REPO}/alpine/v${ver}/community" >> ${repos} \
-    && apk add --no-cache --virtual .tz tzdata \
-    && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+    && apk add --no-cache tzdata \
+    && ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && echo Asia/Shanghai > /etc/timezone \
-    && apk del .tz \
     && apk add --no-cache \
         tzdata \
         freetype-dev \

@@ -6,7 +6,7 @@ ARG ALPINE_REPO=http://dl-cdn.alpinelinux.org
 
 RUN ver=$(cat /etc/alpine-release | awk -F '.' '{printf "%s.%s", $1, $2;}') \
     && repos=/etc/apk/repositories \
-        && mv -f ${repos} ${repos}_bk \
+    && mv -f ${repos} ${repos}_bk \
     && echo "${ALPINE_REPO}/alpine/v${ver}/main" > ${repos} \
     && echo "${ALPINE_REPO}/alpine/v${ver}/community" >> ${repos} \
     && apk add --no-cache tzdata \

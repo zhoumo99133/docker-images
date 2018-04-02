@@ -1,4 +1,4 @@
-FROM nginx:8-alpine
+FROM node:8-alpine
 
 MAINTAINER dishuostecli "dishuostec@gmail.com"
 

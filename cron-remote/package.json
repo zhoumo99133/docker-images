@@ -1,0 +1,24 @@
+{
+  "name": "cron-remote",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build-parser": "pegjs --format commonjs ./src/grammar/crontab-grammar.pegjs",
+    "build-js": "parcel build --no-source-maps --out-dir ./dist ./src/index.js --target node",
+    "build": "npm run build-parser && npm run build-js",
+    "start": "node .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dishuostec",
+  "license": "MIT",
+  "dependencies": {
+    "dayjs": "^1.7.4",
+    "dockerode": "^2.5.5",
+    "glob": "^7.1.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.9.7",
+    "pegjs": "^0.10.0"
+  }
+}

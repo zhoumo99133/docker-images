@@ -1,0 +1,11 @@
+.cache/*
+cron/*
+dist/*
+src/grammar/*.js
+
+# Node
+node_modules/*
+
+# IDEA/WebStorm Project Files
+.idea
+*.iml

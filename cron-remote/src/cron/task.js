@@ -44,7 +44,7 @@ class Task {
   async run() {
     const start = new Date();
     console.log(`==== [START] ${this._name} ====
-  start: ${dayjs(start).format('YYYY/MM/DD HH:mm:ss:S')}
+  start: ${dayjs(start).format('YYYY/MM/DD HH:mm:ss:SSS')}
 `);
     const result = await this._client.exec();
     const end = new Date();
@@ -64,8 +64,8 @@ class Task {
     }).join('\n');
 
     console.log(`==== [END] ${this._name} ====
-  start: ${dayjs(start).format('YYYY/MM/DD HH:mm:ss:S')}
-  end:   ${dayjs(end).format('YYYY/MM/DD HH:mm:ss:S')}
+  start: ${dayjs(start).format('YYYY/MM/DD HH:mm:ss:SSS')}
+  end:   ${dayjs(end).format('YYYY/MM/DD HH:mm:ss:SSS')}
 ${log}`);
   }
 
@@ -74,8 +74,8 @@ ${log}`);
     const timeout = next.valueOf() - Date.now();
 
     console.log(`==== [TASK] ${this._name} ====
-  now:  ${dayjs().format('YYYY/MM/DD HH:mm:ss:S')}
-  next: ${next.format('YYYY/MM/DD HH:mm:ss:S')}
+  now:  ${dayjs().format('YYYY/MM/DD HH:mm:ss:SSS')}
+  next: ${next.format('YYYY/MM/DD HH:mm:ss:SSS')}
   delay: ${timeout} ms
 `);
 

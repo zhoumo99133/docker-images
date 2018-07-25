@@ -1,5 +1,5 @@
 .cache/*
-cron/*
+cron/*.cron
 dist/*
 src/grammar/*.js
 

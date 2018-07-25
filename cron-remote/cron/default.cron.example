@@ -1,0 +1,24 @@
+// name: 测试1 pwd
+// filter: label: com.docker.compose.project=project-balel
+// filter: label: com.docker.compose.service=service-name
+// user: www-data
+// env: foo=1
+// env: bar=2
+// dir: /
+// singleton: true
+* * * * * pwd
+
+// name: 测试2 ls
+// filter: label: com.docker.compose.project=project-label
+// filter: label: com.docker.compose.service=service-name
+// user: www-data
+// env: foo=1
+// env: bar=2
+// dir: /
+// singleton: true
+* * * * * ls -l
+
+// name: 测试3 ls -l && env
+// filter: label: com.docker.compose.project=project-label
+// filter: label: com.docker.compose.service=service-name
+* * * * * ls -l && env

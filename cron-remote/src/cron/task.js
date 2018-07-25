@@ -7,7 +7,7 @@ const beauty = (string, count = 2) => {
   if (typeof string !== 'string') {
     string = inspect(string, { depth: 10 });
   }
-  return string.replace(/^(?!\s*$)/mg, ' '.repeat(count))
+  return string.replace(/^(?!\s*$)/mg, ' '.repeat(count));
 };
 
 class Task {
@@ -54,10 +54,10 @@ class Task {
 
       log.push(`name: ${output.name}`);
       if (output.stdout.length) {
-        log.push(`stdout:\n${beauty(output.stdout)}`)
+        log.push(`stdout:\n${beauty(output.stdout)}`);
       }
       if (output.stderr.length) {
-        log.push(`stderr:\n${beauty(output.stderr)}`)
+        log.push(`stderr:\n${beauty(output.stderr)}`);
       }
 
       return log.join('\n');
@@ -65,7 +65,7 @@ class Task {
 
     console.log(`==== [END] ${this._name} ====
   start: ${dayjs(start).format('YYYY/MM/DD HH:mm:ss:S')}
-  end: ${dayjs(end).format('YYYY/MM/DD HH:mm:ss:S')}
+  end:   ${dayjs(end).format('YYYY/MM/DD HH:mm:ss:S')}
 ${log}`);
   }
 
@@ -74,7 +74,8 @@ ${log}`);
     const timeout = next.valueOf() - Date.now();
 
     console.log(`==== [TASK] ${this._name} ====
-  now: ${dayjs().format('YYYY/MM/DD HH:mm:ss:S')}
+  now:  ${dayjs().format('YYYY/MM/DD HH:mm:ss:S')}
+  next: ${next.format('YYYY/MM/DD HH:mm:ss:S')}
   delay: ${timeout} ms
 `);
 

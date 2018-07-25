@@ -70,13 +70,13 @@ class NextTime {
   }
 
   get() {
-    const time = dayjs().startOf('minute');
+    let time = dayjs().startOf('minute');
     let i = 0;
-    const maxLoop = 525600; // 356 * 24 * 60
+    const maxLoop = 525600; // 365 * 24 * 60
 
     do {
       i++;
-      time.add(1, 'minutes');
+      time = time.add(1, 'minutes');
     } while (i < maxLoop && !this.isValid(time));
 
     if (i >= maxLoop) {

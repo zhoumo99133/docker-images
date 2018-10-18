@@ -1,4 +1,4 @@
-FROM php:5.6-fpm-alpine
+FROM dishuostec/php:5.6-base
 
 RUN apk add --no-cache --virtual .build-deps \
         $PHPIZE_DEPS \

@@ -2,7 +2,7 @@ FROM php:5.6-fpm-alpine
 
 RUN apk add --no-cache --virtual .build-deps \
         $PHPIZE_DEPS \
-    && pecl install xdebug \
+    && pecl install xdebug-2.5.5 \
     && docker-php-ext-enable xdebug \
     \
     && echo xdebug.default_enable=0 >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini \
